@@ -31,7 +31,7 @@ Read intent before doing anything else.
 **Loop mode** when:
 - The user says "teach me X", "I know nothing about X", "help me understand X from scratch", "where do I even start with X", "I keep hearing about X but don't get it" — anything signalling they want to *build* understanding, not just get one analogy.
 
-If it's ambiguous, ask one short question: _"Do you want a quick analogy to something you already know, or do you want to work through [X] from scratch?"_ Then proceed. Do not loop on this.
+If it's ambiguous, ask one short question: _"Want a quick analogy, or should we work through [X] from scratch?"_ Then proceed. Do not loop on this.
 
 ---
 
@@ -72,7 +72,7 @@ One short explanation, four parts, in order:
 1. **Name the anchor:** _"You already know [[Random Forest]]. Here's the parallel."_
 2. **Map the concept onto the anchor part-by-part.** One or two concrete correspondences. Specific, not abstract.
 3. **Call out where the analogy breaks.** Every analogy is wrong somewhere. Saying so stops the user over-extending it.
-4. **End with a check question:** _"Does that line up with how you'd describe [[anchor]]?"_
+4. **End with a check question:** _"Does that match how you think about [[anchor]]?"_
 
 Keep the whole thing under ~150 words. A fast bridge, not a lecture.
 
@@ -99,8 +99,8 @@ A Socratic loop that teaches a new topic from the ground up without ever handing
 
 ## Loop Step 1: Pin the target and the destination
 
-- **The topic:** _"What exactly do you want to understand — the whole of [X], or one part of it?"_
-- **The destination:** _"When you understand [X], what should you be able to do or explain that you can't now?"_ This sets the exit bar for Loop Step 5 and stops the loop running forever.
+- **The topic:** _"Do you want to learn all of [X], or just one part?"_
+- **The destination:** _"Once you get [X], what should you be able to do that you can't now?"_ This sets the exit bar for Loop Step 5 and stops the loop running forever.
 
 One or two questions. Don't interrogate.
 
@@ -108,7 +108,7 @@ One or two questions. Don't interrogate.
 
 Ask what the user already thinks is true. This is the heart of the mode — you teach against their real model.
 
-_"Before I say anything: what's your current guess about how [X] works? Even a rough or wrong one is useful — it tells me where to start."_
+_"Before I explain anything: what's your guess about how [X] works? Even a wrong guess helps — it shows me where to start."_
 
 Then, if a vault exists, search for related notes the user already wrote:
 
@@ -145,7 +145,7 @@ Run a final check against the destination from Loop Step 1. Pose one synthesis t
 
 ## Loop Step 6: Route to filing (do not file here)
 
-_"You've got this now. Want to file it as a concept in your vault so it's linked to what you already know? I can hand off to `add-new-concepts`."_
+_"You've got this now. Want to save it as a concept in your vault, linked to what you already know? I'll hand off to `add-new-concepts`."_
 
 - **Yes, vault exists:** invoke `add-new-concepts`. The paraphrase that skill asks for is already in hand — the user's Loop Step 5 synthesis. Pass the Loop Step 2 notes as candidate cross-domain links.
 - **Yes, no vault config:** _"To file it you'll need a vault first. Run `init-vault`, then `add-new-concepts`."_
@@ -166,3 +166,4 @@ _"You've got this now. Want to file it as a concept in your vault so it's linked
 - **Never take over a calling skill's flow.** Invoked mid-question, give the bridge and hand control back.
 - **Never run the loop forever.** The Loop Step 1 destination is the exit bar.
 - **Bridge mode with no vault anchor routes to external resources** — it does not become a general explainer.
+- **Ask questions in plain language.** Every question you put to the user must be clear, short, and to the point. No complex wording, no jargon, no compound sentences — ask one simple thing the user can answer right away.
